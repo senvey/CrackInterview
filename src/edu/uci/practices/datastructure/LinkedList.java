@@ -24,12 +24,12 @@ public class LinkedList {
 	 */
 	
 	// Tricky! -- using the algorithm on the book
-	public static ListNode p5DupStart(ListNode circularList) {
+	public static Node p5DupStart(Node circularList) {
 		if (circularList == null)
 			return null;
 		
-		ListNode slow = circularList;
-		ListNode fast = circularList;
+		Node slow = circularList;
+		Node fast = circularList;
 		
 		// in case there is no cycle, return null in the end
 		while (fast.next != null && fast.next.next != null) {
@@ -62,14 +62,14 @@ public class LinkedList {
 	 * Input: (3 -> 1 -> 5) + (5 -> 9 -> 2) / Output: 8 -> 0 -> 8
 	 */
 	
-	public static ListNode p4Add(ListNode left, ListNode right) {
+	public static Node p4Add(Node left, Node right) {
 		if (left == null)
 			return right;
 		else
 			if (right == null)
 				return left;
 		
-		ListNode result = new ListNode(left.data + right.data);
+		Node result = new Node(left.data + right.data);
 		int addup = result.data / 10;
 		result.data %= 10;
 		
@@ -108,7 +108,7 @@ public class LinkedList {
 	 * Result: nothing is returned, but the new linked list looks like a->b->d->e
 	 */
 
-	public static void p3RemoveNode(ListNode middle) {
+	public static void p3RemoveNode(Node middle) {
 		// NOTE: cannot remove the last element!
 		if (middle == null || middle.next == null)
 			return;
@@ -124,12 +124,12 @@ public class LinkedList {
 	 * list.
 	 */
 
-	public static ListNode p2NtoLast(ListNode head, int n) {
+	public static Node p2NtoLast(Node head, int n) {
 		if (head == null)
 			return null;
 
-		ListNode begin = head;
-		ListNode end = head;
+		Node begin = head;
+		Node end = head;
 
 		// move ''end'' to the position of n length to ''first'' (n-2 elements in between)
 		for (int i = 1; i < n; ++i) {
@@ -155,13 +155,13 @@ public class LinkedList {
 	 * How would you solve this problem if a temporary buffer is not allowed?
 	 */
 
-	public static void p1RemoveDups(ListNode head) {
+	public static void p1RemoveDups(Node head) {
 		if (head == null)
 			return;
 
-		ListNode cur = head;
+		Node cur = head;
 		while (cur.next != null) {
-			ListNode cycle = cur;
+			Node cycle = cur;
 			while (cycle.next != null) {
 				if (cur.data == cycle.next.data) {
 					cycle.next = cycle.next.next;

@@ -11,11 +11,11 @@ public class LinkedListTest extends TestCase {
 		final int outside = 5;
 		final int cycleSize = 10;
 		
-		ListNode head = new ListNode(1);
+		Node head = new Node(1);
 		for (int i = 1; i < outside; ++i)
 			head.appendData(i);
 		
-		ListNode cycle = new ListNode(8);
+		Node cycle = new Node(8);
 		for (int i = 1; i < cycleSize; ++i)
 			head.appendData(8 + i);
 		
@@ -27,25 +27,25 @@ public class LinkedListTest extends TestCase {
 	
 	@Test	// 2.4
 	public void testAdd() {
-		ListNode left = new ListNode(3);
+		Node left = new Node(3);
 		left.appendData(1);
 		left.appendData(5);
-		ListNode right = new ListNode(5);
+		Node right = new Node(5);
 		right.appendData(9);
 		right.appendData(4);
 		right.appendData(9);
 		
-		ListNode result = LinkedList.p4Add(left, right);
+		Node result = LinkedList.p4Add(left, right);
 		printList(result);
 	}
 	
 	@Test	// 2.3
 	public void testRemoveNode() {
-		ListNode head = new ListNode(10);
+		Node head = new Node(10);
 		for (int i = 9; i > 0; --i)
 			head.appendData(i);
 		
-		ListNode middle = head;
+		Node middle = head;
 		for (int i = 1; i < 7; ++i)
 			middle = middle.next;
 		int data = middle.data;
@@ -63,7 +63,7 @@ public class LinkedListTest extends TestCase {
 	
 	@Test	// 2.2
 	public void testNtoLast() {
-		ListNode head = new ListNode(10);
+		Node head = new Node(10);
 		for (int i = 9; i > 0; --i)
 			head.appendData(i);
 		printList(head);
@@ -75,7 +75,7 @@ public class LinkedListTest extends TestCase {
 
 	@Test	// 2.1
 	public void testRemoveDups() {
-		ListNode head = new ListNode(1);
+		Node head = new Node(1);
 		head.appendData(2);
 		head.appendData(3);
 		head.appendData(1);
@@ -88,7 +88,7 @@ public class LinkedListTest extends TestCase {
 		printList(head);
 	}
 
-	private void printList(ListNode head) {
+	private void printList(Node head) {
 		while (head != null) {
 			System.out.print(head.data + "\t");
 			head = head.next;
