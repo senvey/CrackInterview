@@ -141,7 +141,7 @@ public class ArrayString {
 	/**
 	 * p1.5
 	 * 
-	 * Write a method to replace all spaces in a string with Ô%20Õ.
+	 * Write a method to replace all spaces in a string with '%20'.
 	 */
 
 	public static String p5EncodeSpace(String input) {
@@ -197,11 +197,9 @@ public class ArrayString {
 		int len = s.length;
 
 		for (int i = 0; i < len; i++) {
-			final int ptr = i;
-
 			int insert = i + 1;
 			for (int j = i + 1; j < len; j++) {
-				if (s[ptr] != s[j]) {
+				if (s[i] != s[j]) {
 					s[insert++] = s[j];
 				}
 			}
