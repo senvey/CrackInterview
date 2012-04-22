@@ -52,13 +52,9 @@ public class ArrayStringTest extends TestCase {
 	
 	@Test	// 1.6
 	public void testRotateImage() {
-		byte[][][] image = new byte[][][] {
-			new byte[][] {
-				new byte[] {-55, -66, -55, -66}, new byte[] {123, 123, 123, 123}
-			},
-			new byte[][] {
-				new byte[] {-123, -123, -123, -123}, new byte[] {66, 77, 66, 77}
-			}
+		byte[][][] image = {
+			{{-55, -66, -55, -66},{123, 123, 123, 123}},
+			{{-123, -123, -123, -123}, {66, 77, 66, 77}}
 		};
 		
 		assertEquals(0, ArrayString.p6RotateImageIncorrect(image));
